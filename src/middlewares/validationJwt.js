@@ -10,6 +10,7 @@ export const validateJWT = async (req, res, next) => {
             ok: false,
             msg: 'No hay token en la petición'
          })
+         return
       }
 
       const { id, name, iat, exp } = await validateToken(token);
